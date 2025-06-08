@@ -1,29 +1,63 @@
-import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
-import { useFonts } from 'expo-font';
-import { Stack } from 'expo-router';
-import { StatusBar } from 'expo-status-bar';
-import 'react-native-reanimated';
+import CustomSplashScreen from "@/components/SplashScreen/SplashScreen";
+import { StateProvider } from "@/context/GloabalContext";
+import {
+  Rubik_400Regular,
+  Rubik_500Medium,
+  Rubik_600SemiBold,
+  Rubik_700Bold,
+  Rubik_900Black,
+  useFonts,
+} from "@expo-google-fonts/rubik";
+import { Stack } from "expo-router";
+import * as SplashScreen from "expo-splash-screen";
+import { useEffect, useState } from "react";
+import { ActivityIndicator } from "react-native";
 
-import { useColorScheme } from '@/hooks/useColorScheme';
+SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
-  const colorScheme = useColorScheme();
-  const [loaded] = useFonts({
-    SpaceMono: require('../assets/fonts/SpaceMono-Regular.ttf'),
+  const [splash, setSplash] = useState(true);
+  
+  const [loaded, error] = useFonts({
+    Regular: Rubik_400Regular,
+    semiBold: Rubik_600SemiBold,
+    Bold: Rubik_700Bold,
+    Black: Rubik_900Black,
+    Medium: Rubik_500Medium,
   });
 
-  if (!loaded) {
-    // Async font loading only occurs in development.
-    return null;
-  }
+  useEffect(() => {
+    if (loaded || error) {
+      SplashScreen.hideAsync();
+    }
+  }, [loaded, error]);
+
+  useEffect(() => {
+    if (loaded) {
+      setTimeout(() => setSplash(false), 3000);
+    }
+  }, [loaded]);
+
+  if (splash)
+   return(
+    <CustomSplashScreen/>
+  ) 
+
+  if (!loaded && !error)
+    return <ActivityIndicator size="large" color="black" />;
 
   return (
-    <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      <Stack>
-        <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="+not-found" />
+    <StateProvider>
+      <Stack screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="index" />
+        <Stack.Screen name="signup" />
+        <Stack.Screen name="forgotpassword" />
+        <Stack.Screen name="withdraw" />
+        <Stack.Screen name="savedaccount" />
+        <Stack.Screen name="newaccount" />
+        <Stack.Screen name="verifynewaccount" />
+        <Stack.Screen name="notificationss" />
       </Stack>
-      <StatusBar style="auto" />
-    </ThemeProvider>
+    </StateProvider>
   );
 }
