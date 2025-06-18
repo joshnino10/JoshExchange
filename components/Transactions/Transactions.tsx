@@ -12,6 +12,7 @@ import EmptyTransaction from "../EmptyTransaction/EmptyTransaction";
 import { transactions } from "./TransactionsDetails";
 
 export default function Transactions({ showHeader = true }) {
+
   const router = useRouter();
 
   const displayedTransactions = transactions.slice(0, 3); // show top 3
@@ -32,7 +33,6 @@ export default function Transactions({ showHeader = true }) {
           </TouchableOpacity>
         </View>
       )}
-
       <View
         style={{ marginTop: 15, marginBottom: Platform.OS === "ios" ? 30 : 50 }}
       >
@@ -87,12 +87,14 @@ const styles = StyleSheet.create({
     backgroundColor: "#f0f0f0",
     borderRadius: 15,
   },
-  details: {
+
+  details:{
     flexDirection: "row",
     gap: 15,
     alignItems: "center",
     justifyContent: "space-between",
   },
+
   iconBorder: {
     width: 32,
     height: 32,
@@ -101,14 +103,17 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
-  amount: {
+
+  amount:{
     fontSize: 15,
     fontFamily: "Bold",
   },
-  type: {
+
+  type:{
     fontSize: 16,
     fontFamily: "semiBold",
   },
+
   date: {
     fontFamily: "Regular",
     color: "black",

@@ -1,33 +1,32 @@
+import { useGlobal } from "@/context/GloabalContext";
+import Ionicons from "@expo/vector-icons/Ionicons";
+import { useRouter } from "expo-router";
+import { useState } from "react";
 import {
-  Text,
-  View,
-  StyleSheet,
   KeyboardAvoidingView,
+  Platform,
+  Pressable,
   SafeAreaView,
   ScrollView,
+  StatusBar,
+  StyleSheet,
+  Text,
   TextInput,
   TouchableOpacity,
-  Platform,
-  StatusBar,
-  Pressable,
-  Alert,
+  View
 } from "react-native";
-import Ionicons from "@expo/vector-icons/Ionicons";
-import { useState } from "react";
-import { useRouter } from "expo-router";
 import Animated, {
   FadeInDown,
   FadeInLeft,
   FadeInRight,
   FadeInUp,
 } from "react-native-reanimated";
-import { useGlobal } from "@/context/GloabalContext";
 
 export default function Index() {
   const router = useRouter();
    const {username,setUserName, password,setPassword} = useGlobal()
   const [isSecure, setIsSecure] = useState(true);
-  const [errorMessage, setErrorMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState(" ");
 
   const showPassword = () => {
     setIsSecure(!isSecure);
@@ -50,6 +49,7 @@ export default function Index() {
     }else{
       router.replace('/home')
     }
+  
   };
 
   const gotoSignUp = () => {
@@ -225,7 +225,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     height: 50,
-    backgroundColor: "#f5f5f5", // Better color than "lightgray"
+    backgroundColor: "#f5f5f5", 
     borderRadius: 20,
     gap: 5,
     marginVertical: 10,

@@ -15,9 +15,8 @@ export default function VerifyNewAccount() {
         </TouchableOpacity>
         <Text style={styles.withdraw}>Withdraw</Text>
       </View>
-      <VerifyNewAccDetails/>
-   
-      
+      <VerifyNewAccDetails/> 
+
     </View>
     </SafeAreaView>
   )
@@ -29,6 +28,7 @@ const styles = StyleSheet.create({
         backgroundColor: 'white',
         paddingTop: Platform.OS === "android"? StatusBar.currentHeight : 0.
     },
+    
     page:{
         paddingHorizontal: 16
     },

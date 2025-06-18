@@ -14,8 +14,8 @@ interface GlobalState {
   setPassword: (password: string) => void;
   confirmPassword: string;
   setConfirmPassword: (confirmPassword: string) => void;
+  clearAllData: () => void; // Add this for logout
 }
-
 
 const GlobalContext = createContext<GlobalState | undefined>(undefined);
 
@@ -24,16 +24,26 @@ interface StateProviderProps {
 }
 
 export const StateProvider = ({ children }: StateProviderProps) => {
-  const [username, setUserName] = useState("");
+  const [username, setUsername] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
+  // Clear all data (for logout)
+  const clearAllData = () => {
+    setUsername("");
+    setFirstName("");
+    setLastName("");
+    setEmail("");
+    setPassword("");
+    setConfirmPassword("");
+  };
+
   const value: GlobalState = {
     username,
-    setUserName,
+    setUserName: setUsername,
     firstName,
     setFirstName,
     lastName,
@@ -44,6 +54,7 @@ export const StateProvider = ({ children }: StateProviderProps) => {
     setPassword,
     confirmPassword,
     setConfirmPassword,
+    clearAllData,
   };
 
   return (
@@ -53,7 +64,6 @@ export const StateProvider = ({ children }: StateProviderProps) => {
   );
 };
 
-// Custom hook with error handling
 export const useGlobal = (): GlobalState => {
   const context = useContext(GlobalContext);
   

@@ -14,7 +14,6 @@ import {
 
 export default function Home() {
   return (
-    
     <SafeAreaView style={styles.container}>
         <StatusBar barStyle="dark-content" backgroundColor="white" />
         <View style={styles.page}>
@@ -22,10 +21,10 @@ export default function Home() {
             showsVerticalScrollIndicator={false}
             style={styles.scrollContent}
           >
-            <Header />
-            <AccountBalance />
-            <SelectActions />
-            <TransactionDetails />
+            <Header/>
+            <AccountBalance/>
+            <SelectActions/>
+            <TransactionDetails/>
           </ScrollView>
         </View>
     </SafeAreaView>

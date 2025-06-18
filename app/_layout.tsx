@@ -50,13 +50,14 @@ export default function RootLayout() {
     <StateProvider>
       <Stack screenOptions={{ headerShown: false }}>
         <Stack.Screen name="index" />
-        <Stack.Screen name="signup" />
+        <Stack.Screen name="signup"/>
         <Stack.Screen name="forgotpassword" />
         <Stack.Screen name="withdraw" />
-        <Stack.Screen name="savedaccount" />
-        <Stack.Screen name="newaccount" />
-        <Stack.Screen name="verifynewaccount" />
-        <Stack.Screen name="notificationss" />
+        <Stack.Screen name="savedaccount"/>
+        <Stack.Screen name="newaccount"/>
+        <Stack.Screen name="verifynewaccount"/>
+        <Stack.Screen name="notificationss"/>
+        <Stack.Screen name="citi"/>
       </Stack>
     </StateProvider>
   );

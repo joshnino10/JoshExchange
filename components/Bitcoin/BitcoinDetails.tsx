@@ -41,7 +41,7 @@ export default function BitcoinDetails({
     }
   };
   
-   const onDone =()=>{
+   const onDone = () => {
     router.replace('/(tabs)/home')
    }
 

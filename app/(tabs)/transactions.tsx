@@ -165,7 +165,7 @@ const styles = StyleSheet.create({
     fontFamily: 'semiBold'
   },
   date:{
-    fontFamily: 'Regular',
+    fontFamily: 'Regular', 
     color: 'black',
     fontSize: 15
 

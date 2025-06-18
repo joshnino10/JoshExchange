@@ -14,7 +14,7 @@ export default function SelectActions() {
     }
   return (
     <View style={styles.container}>
-      <Text style={styles.headertitle}>Select action</Text>
+      <Text style={styles.headertitle}>Choose action</Text>
       <View style={styles.ActionContainer}>
         <TouchableOpacity onPress={sellGiftCard}>
             <View style={styles.contents}>
@@ -51,16 +51,19 @@ const styles = StyleSheet.create({
     container:{
         marginTop: 30,
     },
+    
     ActionContainer:{
         marginTop: 10,
         padding: 30,
         backgroundColor: '#f0f0f0',
         borderRadius: 20,
     },
+
     headertitle:{
         fontSize: 18,
         fontFamily: 'semiBold'
     },
+
     contents:{
       
         flexDirection: 'row',

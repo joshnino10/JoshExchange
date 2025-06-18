@@ -23,9 +23,6 @@ export default function SellCrypto() {
     const selectCryptoPress = (route) => {
         router.push(`/sell-crypto/${route}`);
     };
-
-
-
   return (
     <SafeAreaView style={styles.container}>
         <View style={{paddingHorizontal:16}}>

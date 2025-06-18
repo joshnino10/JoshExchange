@@ -58,9 +58,6 @@ export default function SellGiftCard() {
             )}
             />
         </View>
-
-
-    
     </SafeAreaView>
   )
 }
