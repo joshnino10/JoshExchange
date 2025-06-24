@@ -6,10 +6,8 @@ export default function WithDrawToNew() {
   const router = useRouter();
   return (
     <View>
-
-     <TouchableOpacity style={styles.btn} onPress={()=> router.push('/withdraw/newaccount')}>
-      <Text style={styles.text}>WithDraw to new account</Text>
-
+      <TouchableOpacity style={styles.btn} onPress={()=> router.push('/withdraw/newaccount')}>
+        <Text style={styles.text}>Withdraw to new account</Text>
      </TouchableOpacity>
     </View>
   )

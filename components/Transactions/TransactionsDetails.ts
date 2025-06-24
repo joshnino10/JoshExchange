@@ -1,8 +1,6 @@
 
 export const transactions = [
 
-    
-    
     { 
         id: 1,
         type: 'credit',

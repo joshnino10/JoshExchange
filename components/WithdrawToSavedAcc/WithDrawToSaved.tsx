@@ -7,7 +7,7 @@ export default function WithDrawToSaved() {
   return (
     <View>
      <TouchableOpacity style={styles.btn} onPress={()=> router.push('/withdraw/savedaccount')}>
-      <Text style={styles.text}>WithDraw to saved account</Text>
+      <Text style={styles.text}>Withdraw to saved account</Text>
 
      </TouchableOpacity>
     </View>

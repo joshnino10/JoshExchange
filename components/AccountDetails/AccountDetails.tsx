@@ -6,8 +6,6 @@ import Withdrawer from '../Withdrawal/withdrawer';
 
 
 const AccountBalance = () => {
-  
-
   const [showBalance, setShowBalance] = useState(false);
   const balance = '₦100,000.00'; 
 

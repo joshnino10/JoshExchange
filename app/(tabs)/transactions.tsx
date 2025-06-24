@@ -1,6 +1,7 @@
 import { transactions } from "@/components/Transactions/TransactionsDetails";
 import Feather from "@expo/vector-icons/Feather";
 import Ionicons from "@expo/vector-icons/Ionicons";
+import { useRouter } from "expo-router";
 import React, { useState } from "react";
 import {
   Platform,
@@ -15,7 +16,19 @@ import {
 } from "react-native";
 
 export default function Transaction() {
+  const router = useRouter()
   const [searchQuery, setSearchQuery] = useState("");
+
+
+  const showReceipt = (transactionId) => {
+    router.push(`/transaction-receipt/${transactionId}`);
+  };
+
+  // Filter transactions based on search query
+  const filteredTransactions = transactions.filter(transaction =>
+    transaction.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+    (transaction.TransactionType && transaction.TransactionType.toLowerCase().includes(searchQuery.toLowerCase()))
+  );
 
   return (
     <SafeAreaView style={styles.container}>
@@ -40,8 +53,12 @@ export default function Transaction() {
               marginBottom: Platform.OS === "ios" ? 30 : 50,
             }}
           >
-            {transactions.map((transaction, Index) => (
-              <TouchableOpacity style={styles.transactioncontainer} key={Index}>
+            {filteredTransactions.map((transaction, Index) => (
+              <TouchableOpacity 
+                onPress={() => showReceipt(transaction.id)} // Fixed: Pass transaction.id
+                style={styles.transactioncontainer} 
+                key={transaction.id || Index} // Better key prop
+              >
                 <View style={styles.details}>
                   <View
                     style={[
@@ -133,17 +150,16 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: 'center',
     justifyContent: 'space-between',
-    padding:Platform.OS === "ios"? 15:10,
+    padding: Platform.OS === "ios" ? 15 : 10,
     backgroundColor: "#f0f0f0",
     borderRadius: 15,
   },
 
-  details:{
+  details: {
     flexDirection: 'row',
     gap: 15,
     alignItems: 'center',
     justifyContent: "space-between"
-
   },
 
   iconBorder: {
@@ -155,25 +171,21 @@ const styles = StyleSheet.create({
     justifyContent: "center",
   },
 
-  amount:{
+  amount: {
     fontSize: 15,
     fontFamily: 'Bold'
-
   },
-  type:{
+  type: {
     fontSize: 16,
     fontFamily: 'semiBold'
   },
-  date:{
+  date: {
     fontFamily: 'Regular', 
     color: 'black',
     fontSize: 15
-
   },
-  transactionType:{
+  transactionType: {
     fontSize: 12,
     fontFamily: 'semiBold',
-
-
   },
 });

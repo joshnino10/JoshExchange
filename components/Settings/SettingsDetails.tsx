@@ -61,7 +61,7 @@ export default function SettingSDetails() {
         <View style={styles.changepasswordbox}>
           <Pressable
             style={styles.changepasswordbtn}
-            onPress={() => router.push("/citi")}
+            
           >
             <View
               style={{

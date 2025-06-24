@@ -1,4 +1,4 @@
-import {  StatusBar, StyleSheet, Text, View } from "react-native";
+import { StatusBar, StyleSheet, View } from "react-native";
 import Animated, { BounceInDown, BounceInRight, } from "react-native-reanimated";
 
 export default function CustomSplashScreen() {
@@ -23,15 +23,16 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-
     backgroundColor: "#0000cd",
   },
+
   img: {
     alignSelf: "center",
     width: 250,
     height: 250,
     resizeMode: "contain",
   },
+
   text: {
     marginTop: 10,
     textAlign: "center",

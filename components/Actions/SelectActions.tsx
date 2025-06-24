@@ -22,7 +22,7 @@ export default function SelectActions() {
                   <Image style={styles.icon} source={require('../../assets/images/gift-card.png')}/>
                 </View>
                 <View style={{gap:7}}>
-                    <Text style={styles.title}>Sell Gift Cards</Text>
+                    <Text style={styles.title}>Sell Gift Card</Text>
                     <Text style={styles.desc}>Exchange your gifts cards for cash</Text>
                 </View>
             </View>

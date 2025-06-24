@@ -23,6 +23,10 @@ export default function Transactions({ showHeader = true }) {
     );
   }
 
+  const showReceipt = (transactionId) => {
+    router.push(`/transaction-receipt/${transactionId}`);
+  };
+
   return (
     <View>
       {showHeader && displayedTransactions.length > 0 && (
@@ -37,7 +41,11 @@ export default function Transactions({ showHeader = true }) {
         style={{ marginTop: 15, marginBottom: Platform.OS === "ios" ? 30 : 50 }}
       >
         {displayedTransactions.map((transaction) => (
-          <TouchableOpacity style={styles.container} key={transaction.id || transaction.title}>
+          <TouchableOpacity 
+            onPress={() => showReceipt(transaction.id)} // Fixed: Pass transaction.id
+            style={styles.container} 
+            key={transaction.id || transaction.title}
+          >
             <View style={styles.details}>
               <View
                 style={[styles.iconBorder, { borderColor: transaction.color }]}

@@ -58,6 +58,7 @@ export default function RootLayout() {
         <Stack.Screen name="verifynewaccount"/>
         <Stack.Screen name="notificationss"/>
         <Stack.Screen name="citi"/>
+        <Stack.Screen name="transaction-receipt/[id]"/>
       </Stack>
     </StateProvider>
   );
