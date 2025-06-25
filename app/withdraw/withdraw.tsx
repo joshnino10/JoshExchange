@@ -20,10 +20,7 @@ export default function Withdraw() {
       <View style={{marginTop: 100, alignItems: "center", gap:20}}>
         <WithDrawToSaved/>
         <WithdrawToNew/>
-
       </View>
-      
-
       
     </View>
     </SafeAreaView>

@@ -189,13 +189,16 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
   },
+
   scrollContent: {
     flexGrow: 1,
   },
+
   contents: {
     flex: 1,
     paddingHorizontal: 20,
   },
+
   title: {
     color: "#4682B4", // Changed to a nice blue color
     fontSize: 35,
@@ -233,6 +236,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: "#e0e0e0",
   },
+  
   input: {
     flex: 1,
     fontWeight: "500", // Reduced from 700 for better readability

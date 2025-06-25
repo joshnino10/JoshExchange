@@ -11,6 +11,7 @@ export const transactions = [
         time: "10:00 AM",
         icon: 'arrow-down-left',
         color: "#10B981",
+        dateOfTransaction: '24-May-2025 | 5:29 PM',
         
         
     },
@@ -24,7 +25,11 @@ export const transactions = [
         date: "24-May-2025",
         time: "5:29 PM",
         icon: 'arrow-up-right',
-        color: "#Ef4444"
+        color: "#Ef4444",
+        dateOfTransaction: '24-May-2025 | 5:29 PM',
+        Recipient: "Joshua nduka ifeanyi",
+        RecipientBank: 'Opay',
+        AccountNo: '8149364188'
     },
 
     { 
@@ -35,7 +40,8 @@ export const transactions = [
         date: "10-May-2025",
         time: "5:29 PM",
         icon: 'arrow-up-right',
-        color: "#Ef4444"
+        color: "#Ef4444",
+        dateOfTransaction: '24-May-2025 | 5:29 PM',
     },
 
     { 
@@ -48,6 +54,7 @@ export const transactions = [
         time: "11:00 PM",
         icon: 'arrow-down-left',
         color: "#10B981",
+        dateOfTransaction: '24-May-2025 | 5:29 PM',
 
     },
 
@@ -61,6 +68,7 @@ export const transactions = [
         time: "12:05 PM",
         icon: 'arrow-down-left',
         color: "#10B981",
+        dateOfTransaction: '24-May-2025 | 5:29 PM',
 
     },
 
@@ -72,7 +80,8 @@ export const transactions = [
         date: "7-May-2025",
         time: "9:29 AM",
         icon: 'arrow-up-right',
-        color: "#Ef4444"
+        color: "#Ef4444",
+        dateOfTransaction: '24-May-2025 | 5:29 PM',
     },
 
     { 
@@ -83,7 +92,8 @@ export const transactions = [
         date: "6-May-2025",
         time: "9:29 AM",
         icon: 'arrow-up-right',
-        color: "#Ef4444"
+        color: "#Ef4444",
+        dateOfTransaction: '24-May-2025 | 5:29 PM',
     },
 
     { 
@@ -96,6 +106,7 @@ export const transactions = [
         time: "12:05 PM",
         icon: 'arrow-down-left',
         color: "#10B981",
+        dateOfTransaction: '24-May-2025 | 5:29 PM',
 
     },
 

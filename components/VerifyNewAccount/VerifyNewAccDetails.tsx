@@ -2,17 +2,17 @@ import Ionicons from "@expo/vector-icons/Ionicons";
 import { useRouter } from "expo-router";
 import React, { useState } from "react";
 import {
-    Alert,
-    Dimensions,
-    Modal,
-    Platform,
-    SafeAreaView,
-    StatusBar,
-    StyleSheet,
-    Text,
-    TextInput,
-    TouchableOpacity,
-    View
+  Alert,
+  Dimensions,
+  Modal,
+  Platform,
+  SafeAreaView,
+  StatusBar,
+  StyleSheet,
+  Text,
+  TextInput,
+  TouchableOpacity,
+  View
 } from "react-native";
 
 const { height: screenHeight, width: screenWidth } = Dimensions.get('window');
@@ -79,6 +79,22 @@ export default function VerifyNewAccDetails() {
       setTransactionPin('');
       setPinError('');
     }
+  };
+
+  // Handle add beneficiary click
+  const handleAddBeneficiary = () => {
+    Alert.alert(
+      'Add Beneficiary',
+      'This will navigate to add beneficiary screen',
+      [
+        { text: 'Cancel', style: 'cancel' },
+        { text: 'OK', onPress: () => {
+          // Navigate to add beneficiary screen
+          // router.push('/add-beneficiary');
+          console.log('Navigate to add beneficiary screen');
+        }}
+      ]
+    );
   };
 
   const handleKeypadPress = (value) => {
@@ -220,9 +236,13 @@ export default function VerifyNewAccDetails() {
             </View> 
           </View>
         </View>
-        <View>
-            <Text>Add Benefiaciary</Text>
-        </View>
+        
+        <TouchableOpacity style={styles.beneficiarybox} onPress={handleAddBeneficiary}>
+          <View style={styles.beneficiaryContainer}>
+            <Ionicons name="add-circle" size={24} color="#0000cd" />
+            <Text style={styles.beneficiaryText}>Add Beneficiary</Text>
+          </View>
+        </TouchableOpacity>
 
         <View style={styles.selectContainer}>
           <View style={styles.amountContainer}>
@@ -338,33 +358,27 @@ const styles = StyleSheet.create({
     padding: 20,
     backgroundColor: '#f1f1f1',
     borderRadius: 20
-
-
   },
   BankName:{
     fontSize: 18,
     fontFamily: 'Medium',
     color: 'gray',
     textAlign: 'center',
-
   },
   BankDetails:{
     flexDirection: 'row',
     justifyContent: "space-between",
     alignItems: 'center',
     marginTop:15
-
   },
   lable:{
     fontFamily: "Medium",
     fontSize: 16,
     color: "gray"
-
   },  
   value:{
     fontFamily: 'semiBold',
     fontSize: 17
-
   },
   withdraw: {
     fontFamily: "Bold",
@@ -372,9 +386,27 @@ const styles = StyleSheet.create({
     alignSelf: "center",
   },
   selectContainer: {
-    marginTop: 40,
+    marginTop: 10,
   },
-  selectBankContainer: {},
+  
+  beneficiaryText:{
+    fontSize: 15,
+    fontFamily: 'semiBold',
+  },
+
+  beneficiarybox:{
+    marginTop: 15,
+    paddingVertical: 8,
+    paddingHorizontal: 4,
+  },
+
+  beneficiaryContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 10
+
+  },
+  
   label: {
     fontFamily: "semiBold",
     fontSize: 16,

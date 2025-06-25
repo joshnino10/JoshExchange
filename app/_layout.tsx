@@ -13,6 +13,7 @@ import * as SplashScreen from "expo-splash-screen";
 import { useEffect, useState } from "react";
 import { ActivityIndicator } from "react-native";
 
+
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {

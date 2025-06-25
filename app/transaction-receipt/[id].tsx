@@ -5,6 +5,7 @@ import {
     Platform,
     SafeAreaView,
     ScrollView,
+    StatusBar,
     StyleSheet,
     Text,
     TouchableOpacity,
@@ -44,13 +45,7 @@ export default function TransactionReceipt() {
     );
   }
 
-  const formatDate = (date: string | Date) => {
-    const d = new Date(date);
-    return d.toLocaleString("en-US", {
-      dateStyle: "medium",
-      timeStyle: "short",
-    });
-  };
+  
 
   return (
     <SafeAreaView style={styles.container}>
@@ -91,7 +86,7 @@ export default function TransactionReceipt() {
 
           <View style={styles.detailRow}>
             <Text style={styles.detailLabel}>Date & Time</Text>
-            <Text style={styles.detailValue}>{receipt.time}</Text>
+            <Text style={styles.detailValue}>{(receipt.dateOfTransaction)}</Text>
           </View>
 
           <View style={styles.detailRow}>
@@ -132,6 +127,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#fff",
+    paddingTop: Platform.OS === 'android'? StatusBar.currentHeight: 0
   },
 
   header: {
