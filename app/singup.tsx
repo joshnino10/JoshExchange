@@ -91,8 +91,6 @@ export default function Index() {
         }
       ]
     );
-  
-   
 };
 
   const gotoLogin = () => { // Renamed function for clarity
@@ -101,10 +99,10 @@ export default function Index() {
 
   return (
     <SafeAreaView style={styles.safeArea}>
-      <StatusBar barStyle="dark-content" />
+      <StatusBar barStyle="dark-content" backgroundColor="white" />
       <KeyboardAvoidingView
         behavior={Platform.OS === "ios" ? "padding" : "height"}
-        keyboardVerticalOffset={Platform.OS === "ios" ? 10 : 20}
+        keyboardVerticalOffset={Platform.OS === "ios" ? 10 : 50}
         style={styles.contents}
       >
         <ScrollView
@@ -341,7 +339,7 @@ const styles = StyleSheet.create({
   btn: {
     marginTop: 20,
     width: "100%",
-    padding: 15, 
+    padding: Platform.OS === 'ios'? 15:9, 
     backgroundColor: "#0000cd",
     borderRadius: 20,
     alignItems: "center",

@@ -4,7 +4,7 @@ import Animated, { BounceInDown, BounceInRight, } from "react-native-reanimated"
 export default function CustomSplashScreen() {
   return ( 
     <View style={styles.container}>
-        <StatusBar barStyle="light-content"/>
+        <StatusBar barStyle="light-content" backgroundColor='#0000cd'/>
       <View>
         <Animated.Image entering={BounceInDown}
           style={styles.img}

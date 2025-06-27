@@ -46,11 +46,11 @@ export default function Transaction() {
           />
         </View>
 
-        <ScrollView>
+        <ScrollView showsVerticalScrollIndicator={false}>
           <View
             style={{
               marginTop: 15,
-              marginBottom: Platform.OS === "ios" ? 30 : 50,
+              marginBottom: Platform.OS === "ios" ? 30 : 100,
             }}
           >
             {filteredTransactions.map((transaction, Index) => (

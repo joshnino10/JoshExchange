@@ -63,10 +63,10 @@ export default function Index() {
 
   return (
     <SafeAreaView style={styles.safeArea}>
-      <StatusBar barStyle="dark-content" />
+      <StatusBar barStyle="dark-content" backgroundColor="white" />
       <KeyboardAvoidingView
         behavior={Platform.OS === "ios" ? "padding" : "height"}
-        keyboardVerticalOffset={Platform.OS === "ios" ? 0 : 20}
+        keyboardVerticalOffset={Platform.OS === "ios" ?  10:50}
         style={styles.contents}
       >
         <ScrollView
@@ -75,7 +75,7 @@ export default function Index() {
           style={styles.scrollContent}
         >
           <Animated.Image
-            entering={FadeInUp.duration(600)}
+            entering={FadeInUp.duration(600)} 
             style={{
               height: 300,
               width: "100%",
@@ -254,7 +254,7 @@ const styles = StyleSheet.create({
   btn: {
     marginTop: 20,
     width: "100%",
-    padding: 15, // Increased padding for better touch target
+    padding: Platform.OS === 'ios'? 15:9, // Increased padding for better touch target
     backgroundColor: "#0000cd",
     borderRadius: 20,
     alignItems: "center",
