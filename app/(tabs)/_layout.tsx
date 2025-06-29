@@ -11,21 +11,21 @@ export default function Rootlayout() {
       headerShown: false,
       tabBarActiveTintColor:  "#0000cd",
       tabBarLabelStyle:{fontFamily: 'Bold', fontSize:11},
-
+      
       tabBarIconStyle:{alignItems: 'center', justifyContent:'center'},
 
       tabBarStyle:{
         position: 'absolute',
-        height: Platform.OS === "ios"? 80:80,
-        paddingTop: Platform.OS === "ios"? 8:5,
+        height: Platform.OS === "ios"? 80:60,
+        paddingTop: Platform.OS === "ios"? 6:8,
         justifyContent: 'center',
         alignItems: "center",
-        borderTopWidth: 0.2,
+        borderTopWidth: 0.4,
         shadowColor: "#000",
         shadowOffset: {width:2, height:7},
         shadowOpacity: 0.7,
         shadowRadius: 2,
-        elevation: 4
+        elevation: 5
       }
     }}>
         <Tabs.Screen 

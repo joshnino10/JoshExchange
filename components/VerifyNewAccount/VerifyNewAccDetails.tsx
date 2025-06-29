@@ -480,7 +480,7 @@ const styles = StyleSheet.create({
   },
 
   modalContainer: {
-    height: Platform.OS === 'ios'? screenHeight * 0.82: screenHeight * 0.90,
+    height: Platform.OS === 'ios'? screenHeight * 0.89: screenHeight * 0.90,
     backgroundColor: "#fff",
     borderTopLeftRadius: 20,
     borderTopRightRadius: 20,
