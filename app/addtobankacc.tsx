@@ -1,20 +1,25 @@
+import AddToBankSettings from "@/components/AddToBank/AddToBankSettings";
+import Ionicons from "@expo/vector-icons/Ionicons";
+import { useRouter } from "expo-router";
 import {
+  Platform,
   SafeAreaView,
+  StatusBar,
   StyleSheet,
   Text,
-  View,
-  Platform,
-  StatusBar,
   TouchableOpacity,
+  View,
 } from "react-native";
-import Ionicons from "@expo/vector-icons/Ionicons";
-import AddToBankSettings from "@/components/AddToBank/AddToBankSettings";
 
 export default function AddtoBankAccount() {
+  const router = useRouter()
+  const goback = ()=>{
+    router.back()
+  }
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
-         <TouchableOpacity>
+         <TouchableOpacity onPress={goback}>
            <Ionicons name="chevron-back" size={24} color="black" />
          </TouchableOpacity>
          <Text style={styles.text}>Add New Bank</Text>
