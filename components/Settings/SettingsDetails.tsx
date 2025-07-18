@@ -20,6 +20,19 @@ export default function SettingSDetails() {
 
   const toggleSwitch = () => setIsEnable((prev) => !prev);
 
+
+    const handleChangePin = () => {
+      router.push('/changepin')
+    }
+
+    const handleChangePassword = () => {
+      router.push('/changepassword')
+    }
+
+    const handleAddtoBank = () => {
+      router.push('/addtobankacc')
+    }
+
   const onPressDelete = () => {
     Alert.alert(
       "Delete Account",
@@ -46,14 +59,14 @@ export default function SettingSDetails() {
       <View style={styles.settingsContainer}>
         <View>
           <Text style={styles.label}>Bank Accounts</Text>
-          <TouchableOpacity style={styles.Btn}>
+          <TouchableOpacity onPress={handleAddtoBank} style={styles.Btn}>
             <Text style={styles.BtnText}>+ Add bank account</Text>
           </TouchableOpacity>
         </View>
 
         <View style={styles.box}>
           <Text style={styles.label}>Transaction Pin</Text>
-          <TouchableOpacity style={styles.Btn}>
+          <TouchableOpacity onPress={handleChangePin} style={styles.Btn}>
             <Text style={styles.BtnText}>Change Pin</Text>
           </TouchableOpacity>
         </View>
@@ -61,7 +74,7 @@ export default function SettingSDetails() {
         <View style={styles.changepasswordbox}>
           <Pressable
             style={styles.changepasswordbtn}
-            
+            onPress={handleChangePassword}
           >
             <View
               style={{

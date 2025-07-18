@@ -1,0 +1,45 @@
+import {
+  SafeAreaView,
+  StyleSheet,
+  Text,
+  View,
+  Platform,
+  StatusBar,
+  TouchableOpacity,
+} from "react-native";
+import Ionicons from "@expo/vector-icons/Ionicons";
+import AddToBankSettings from "@/components/AddToBank/AddToBankSettings";
+
+export default function AddtoBankAccount() {
+  return (
+    <SafeAreaView style={styles.container}>
+      <View style={styles.header}>
+         <TouchableOpacity>
+           <Ionicons name="chevron-back" size={24} color="black" />
+         </TouchableOpacity>
+         <Text style={styles.text}>Add New Bank</Text>
+      </View>
+      <AddToBankSettings/>
+      
+    </SafeAreaView>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: "white",
+    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
+  },
+  header: {
+    paddingHorizontal: 16,
+    flexDirection: "row", 
+    alignItems: "center", 
+    gap: "26%"
+  },
+  text: {
+    fontFamily: "Bold",
+    fontSize: 20,
+    color: "#1F2937",
+  },
+});

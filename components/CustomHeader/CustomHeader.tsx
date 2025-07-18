@@ -33,6 +33,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     paddingHorizontal: 10,
+ 
     height: Platform.OS === 'ios'? 60:55,
   
   },

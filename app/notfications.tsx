@@ -1,12 +1,14 @@
+
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { useRouter } from 'expo-router';
 import React from 'react';
 import { Platform, SafeAreaView, StatusBar, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
 export default function Notfications() {
-    const router = useRouter();
+  const router = useRouter();
+
   return (
-    <SafeAreaView style={styles.container}>
+  <SafeAreaView style={styles.container}>
     <View style={styles.page}>
       <View style={{flexDirection: 'row', alignItems: 'center',gap: '32%'}}>
         <TouchableOpacity onPress={()=> router.back()}>
@@ -14,27 +16,25 @@ export default function Notfications() {
         </TouchableOpacity>
         <Text style={styles.withdraw}>Notifications</Text>
       </View>
-    
-      
     </View>
-    </SafeAreaView>
+  </SafeAreaView>
   )
 }
 
 const styles = StyleSheet.create({
-    container:{
+    container: {
         flex:1,
         backgroundColor: 'white',
         paddingTop: Platform.OS === "android"? StatusBar.currentHeight : 0.
     },
-    page:{
+    
+    page: {
         paddingHorizontal: 16
     },
-
-    withdraw:{
+    
+    withdraw: {
         fontFamily: 'Bold',
         fontSize: 20,
-        alignSelf: 'center'
-       
+        alignSelf: 'center'  
     }
 })

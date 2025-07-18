@@ -16,10 +16,9 @@ export default function VerifyNewAccount() {
         <Text style={styles.withdraw}>Withdraw</Text>
       </View>
       <VerifyNewAccDetails/> 
-
     </View>
     </SafeAreaView>
-    
+
   )
 }
 

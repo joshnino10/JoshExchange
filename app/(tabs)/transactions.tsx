@@ -20,7 +20,7 @@ export default function Transaction() {
   const [searchQuery, setSearchQuery] = useState("");
 
 
-  const showReceipt = (transactionId) => {
+  const showReceipt = (transactionId:any) => {
     router.push(`/transaction-receipt/${transactionId}`);
   };
 
@@ -50,7 +50,7 @@ export default function Transaction() {
           <View
             style={{
               marginTop: 15,
-              marginBottom: Platform.OS === "ios" ? 30 : 100,
+              marginBottom: Platform.OS === "ios" ? 80 : 100,
             }}
           >
             {filteredTransactions.map((transaction, Index) => (
@@ -120,6 +120,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
     backgroundColor: "white",
   },
+
   title: {
     fontFamily: "Bold",
     fontSize: 25,

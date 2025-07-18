@@ -11,7 +11,7 @@ const SafeHead = ({ title }: { title: string }) => (
     }}
   >
     <View>
-      <CustomHeader title={title} />
+      <CustomHeader title={title}/>
     </View>
   </SafeAreaView>
 );
@@ -22,40 +22,41 @@ export default function Cryptolayout() {
       <Stack.Screen
         name="index"
         options={{
-          header: () => <SafeHead title="Sell crypto" />,
-        }}
+          header: ()=> <SafeHead title="Sell crypto" />,
+        }}  
       />
       <Stack.Screen
         name="bitcoin"
         options={{
-          header: () => <SafeHead title="Deposit BTC" />,
+          header: ()=> <SafeHead title="Deposit BTC"/>,
         }}
       />
 
       <Stack.Screen
         name="ethereum"
         options={{
-          header: () => <SafeHead title="Deposit Ethereum" />,
+          header: ()=> <SafeHead title="Deposit Ethereum"/>,
         }}
       />
 
       <Stack.Screen
         name="usdt-erc"
         options={{
-          header: () => <SafeHead title="Deposit Usdt(ERC)" />,
+          header: ()=> <SafeHead title="Deposit Usdt(ERC)"/>,
         }}
       />
 
       <Stack.Screen
         name="usdt-trc"
         options={{
-          header: () => <SafeHead title="Deposit Usdt(TRC)" />,
+          header: () => <SafeHead title="Deposit Usdt(TRC)"/>,
         }}
       />
+      
       <Stack.Screen
         name="usdt-bep"
         options={{
-          header: () => <SafeHead title="Deposit Usdt(Bep)" />,
+          header: () => <SafeHead title="Deposit Usdt(Bep)"/>,
         }}
       />
       <Stack.Screen

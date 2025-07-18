@@ -6,11 +6,9 @@ export default function Apple() {
   return (
     <View style={styles.container} >
       <AppleGiftCard/>
-     
     </View>
   )
 }
-
 const styles = StyleSheet.create({
   container:{
     flex: 1,
