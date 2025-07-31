@@ -39,6 +39,7 @@ export default function Index() {
     confirmPassword,
     setConfirmPassword
   } = useGlobal();
+
   const [isSecure, setIsSecure] = useState(true);
   const [isSecure2, setIsSecure2] = useState(true);
   const [errorMessage, setErrorMessage] = useState('');

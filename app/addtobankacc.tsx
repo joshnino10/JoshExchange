@@ -13,9 +13,11 @@ import {
 
 export default function AddtoBankAccount() {
   const router = useRouter()
-  const goback = ()=>{
+
+  const goback = () => {
     router.back()
   }
+
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
@@ -25,7 +27,6 @@ export default function AddtoBankAccount() {
          <Text style={styles.text}>Add New Bank</Text>
       </View>
       <AddToBankSettings/>
-      
     </SafeAreaView>
   );
 }

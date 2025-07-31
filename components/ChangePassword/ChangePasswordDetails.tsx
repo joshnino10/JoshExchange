@@ -192,29 +192,35 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#FFFFFF',
   },
+
   page: {
     paddingHorizontal: 16,
     paddingTop: 20,
   },
+  
   header: {
     flexDirection: "row", 
     alignItems: "center", 
     gap: "23%"
   },
+
   text: {
     fontFamily: "Bold",
     fontSize: 20,
     color: "#1F2937",
   },
+
   content: {
     flex: 1,
     paddingHorizontal: 16,
     paddingTop: 30,
     justifyContent: 'space-between',
   },
+
   inputSection: {
     marginBottom: 40,
   },
+
   label: {
     fontSize: 17,
     fontFamily: 'semiBold',
@@ -231,36 +237,43 @@ const styles = StyleSheet.create({
     paddingHorizontal: 12,
     backgroundColor: '#F7F7F7',
   },
+
   textInput: {
     flex: 1,
     fontSize: 16,
     paddingVertical: 12,
     color: '#111827',
   },
+
   eyeIcon: {
     padding: 4,
   },
+
   passwordHint: {
     fontSize: 12,
     color: '#6B7280',
     marginTop: 4,
     marginLeft: 4,
   },
+
   formSection: {
     flex: 1,
   },
   buttonContainer: {
     paddingBottom: 20,
   },
+
   changeButton: {
    backgroundColor: "#0000cd",
-    borderRadius: 20,
-    paddingVertical: 16,
-    alignItems: 'center',
+   borderRadius: 20,
+   paddingVertical: 16,
+   alignItems: 'center',
   },
+
   changeButtonDisabled: {
     backgroundColor: '#9CA3AF',
   },
+
   changeButtonText: {
     color: '#FFFFFF',
     fontSize: 16,
