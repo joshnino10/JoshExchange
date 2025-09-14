@@ -6,7 +6,6 @@ export default function UsdtTrc() {
   return (
     <View style={styles.container}>
       <UsdtTrcDetails/>
-     
     </View>
   )
 }

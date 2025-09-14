@@ -47,6 +47,7 @@ export default function Index() {
   const showPassword = () => {
     setIsSecure(!isSecure);
   };
+  
   const showConfirmPassword = () => {
     setIsSecure2(!isSecure2);
   };

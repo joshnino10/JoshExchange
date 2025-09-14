@@ -24,7 +24,7 @@ import Animated, {
 
 export default function Index() {
   const router = useRouter();
-   const {username,setUserName, password,setPassword} = useGlobal()
+  const {username,setUserName, password,setPassword} = useGlobal()
   const [isSecure, setIsSecure] = useState(true);
   const [errorMessage, setErrorMessage] = useState(" ");
 
@@ -206,6 +206,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     textAlign: "center",
   },
+
   titleDesc: {
     fontSize: 13,
     fontFamily: "semiBold",
@@ -213,9 +214,11 @@ const styles = StyleSheet.create({
     textAlign: "center",
     marginBottom: 10,
   },
+
   inputContents: {
     marginTop: 20,
   },
+
   errorText: {
     fontSize: 13,
     fontFamily: "Medium",
@@ -224,6 +227,7 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     paddingHorizontal: 10,
   },
+
   inputContainer: {
     flexDirection: "row",
     alignItems: "center",
@@ -242,15 +246,18 @@ const styles = StyleSheet.create({
     fontWeight: "500", // Reduced from 700 for better readability
     fontSize: 16,
   },
+
   forgotPasswordContainer: {
     marginTop: 5,
     alignItems: "flex-end",
   },
+
   forgotPassword: {
     color: "#0000cd",
     fontFamily: "semiBold",
     fontWeight: "600",
   },
+
   btn: {
     marginTop: 20,
     width: "100%",

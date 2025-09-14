@@ -19,6 +19,7 @@ export default function Header() {
             <Text style={styles.name}>{firstName || 'Guest'}</Text>
             </View>
         </View>
+        
      <TouchableOpacity onPress={()=> router.push('/notfications')}>
         <Image style={styles.notification} source={require("../../assets/images/notificationicon.png")}/>
      </TouchableOpacity>

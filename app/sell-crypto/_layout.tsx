@@ -25,6 +25,7 @@ export default function Cryptolayout() {
           header: ()=> <SafeHead title="Sell crypto" />,
         }}  
       />
+
       <Stack.Screen
         name="bitcoin"
         options={{
@@ -59,6 +60,7 @@ export default function Cryptolayout() {
           header: () => <SafeHead title="Deposit Usdt(Bep)"/>,
         }}
       />
+      
       <Stack.Screen
         name="tron"
         options={{
