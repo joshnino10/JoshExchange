@@ -34,7 +34,7 @@ export default function RootLayout() {
 
   useEffect(() => {
     if (loaded) {
-      setTimeout(() => setSplash(false), 3000);
+      setTimeout(() => setSplash(false), 5000);
     }
   }, [loaded]);
 

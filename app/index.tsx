@@ -1,4 +1,4 @@
-import { useGlobal } from "@/context/GloabalContext";
+import { useGlobal } from "@/context/GlobalContext"; // ✅ fixed spelling
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { useRouter } from "expo-router";
 import { useState } from "react";
@@ -13,7 +13,7 @@ import {
   Text,
   TextInput,
   TouchableOpacity,
-  View
+  View,
 } from "react-native";
 import Animated, {
   FadeInDown,
@@ -24,41 +24,32 @@ import Animated, {
 
 export default function Index() {
   const router = useRouter();
-  const {username,setUserName, password,setPassword} = useGlobal()
+  const { username, setUserName, password, setPassword } = useGlobal();
   const [isSecure, setIsSecure] = useState(true);
-  const [errorMessage, setErrorMessage] = useState(" ");
-
-  const showPassword = () => {
-    setIsSecure(!isSecure);
-  };
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleLogin = () => {
     setErrorMessage("");
 
-    // Validate input
     if (!username || !password) {
       setErrorMessage("Please fill in all fields");
       return;
     }
 
-    // Basic password length check
     if (password.length < 6) {
       setErrorMessage("Password must be at least 6 characters long");
       return;
-      
-    }else{
-      router.replace('/home')
     }
-  
+
+    router.replace("/home");
   };
 
   const gotoSignUp = () => {
-    router.replace("/singup"); 
+    router.replace("/signup"); // ✅ fixed route name
   };
 
   const handleForgotPassword = () => {
-    router.push('/forgotpassword')
-  
+    router.push("/forgotpassword");
   };
 
   return (
@@ -66,7 +57,7 @@ export default function Index() {
       <StatusBar barStyle="dark-content" backgroundColor="white" />
       <KeyboardAvoidingView
         behavior={Platform.OS === "ios" ? "padding" : "height"}
-        keyboardVerticalOffset={Platform.OS === "ios" ?  10:50}
+        keyboardVerticalOffset={Platform.OS === "ios" ? 10 : 50}
         style={styles.contents}
       >
         <ScrollView
@@ -75,42 +66,27 @@ export default function Index() {
           style={styles.scrollContent}
         >
           <Animated.Image
-            entering={FadeInUp.duration(600)} 
-            style={{
-              height: 300,
-              width: "100%",
-              alignSelf: "center",
-              resizeMode: "contain",
-            }}
+            entering={FadeInUp.duration(600)}
+            style={styles.image}
             source={require("../assets/images/loginicon.jpg")}
           />
-          
-          <Animated.Text
-            entering={FadeInDown.duration(600)}
-            style={styles.title}
-          >
+
+          <Animated.Text entering={FadeInDown.duration(600)} style={styles.title}>
             Login
           </Animated.Text>
 
-          <Animated.Text
-            entering={FadeInLeft.duration(300)}
-            style={styles.titleDesc}
-          >
+          <Animated.Text entering={FadeInLeft.duration(300)} style={styles.titleDesc}>
             Please log in to continue
           </Animated.Text>
 
           <View style={styles.inputContents}>
-            {/* Error message display */}
             {errorMessage ? (
               <Animated.View entering={FadeInDown.duration(300)}>
                 <Text style={styles.errorText}>{errorMessage}</Text>
               </Animated.View>
             ) : null}
 
-            <Animated.View
-              entering={FadeInLeft.duration(600)}
-              style={styles.inputContainer}
-            >
+            <Animated.View entering={FadeInLeft.duration(600)} style={styles.inputContainer}>
               <Ionicons name="person-outline" size={20} color="black" />
               <TextInput
                 style={styles.input}
@@ -123,21 +99,18 @@ export default function Index() {
               />
             </Animated.View>
 
-            <Animated.View
-              entering={FadeInRight.duration(800)}
-              style={styles.inputContainer}
-            >
+            <Animated.View entering={FadeInRight.duration(800)} style={styles.inputContainer}>
               <Ionicons name="lock-closed-outline" size={20} color="black" />
               <TextInput
                 style={styles.input}
                 placeholder="Password"
                 placeholderTextColor="gray"
-                secureTextEntry={isSecure} 
+                secureTextEntry={isSecure}
                 value={password}
                 onChangeText={setPassword}
                 autoCapitalize="none"
               />
-              <TouchableOpacity onPress={showPassword}>
+              <TouchableOpacity onPress={() => setIsSecure((prev) => !prev)}>
                 <Ionicons
                   name={isSecure ? "eye-outline" : "eye-off-outline"}
                   size={24}
@@ -154,7 +127,14 @@ export default function Index() {
           </View>
 
           <Animated.View entering={FadeInUp.duration(700)}>
-            <TouchableOpacity onPress={handleLogin} style={styles.btn}>
+            <TouchableOpacity
+              onPress={handleLogin}
+              style={[
+                styles.btn,
+                (!username || !password) && { backgroundColor: "#A9A9A9" },
+              ]}
+              disabled={!username || !password}
+            >
               <Text style={styles.btnText}>Login</Text>
             </TouchableOpacity>
           </Animated.View>
@@ -189,24 +169,26 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
   },
-
   scrollContent: {
     flexGrow: 1,
   },
-
   contents: {
     flex: 1,
     paddingHorizontal: 20,
   },
-
+  image: {
+    height: 300,
+    width: "100%",
+    alignSelf: "center",
+    resizeMode: "contain",
+  },
   title: {
-    color: "#4682B4", // Changed to a nice blue color
+    color: "#4682B4",
     fontSize: 35,
     fontFamily: "Bold",
     fontWeight: "bold",
     textAlign: "center",
   },
-
   titleDesc: {
     fontSize: 13,
     fontFamily: "semiBold",
@@ -214,11 +196,9 @@ const styles = StyleSheet.create({
     textAlign: "center",
     marginBottom: 10,
   },
-
   inputContents: {
     marginTop: 20,
   },
-
   errorText: {
     fontSize: 13,
     fontFamily: "Medium",
@@ -227,12 +207,11 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     paddingHorizontal: 10,
   },
-
   inputContainer: {
     flexDirection: "row",
     alignItems: "center",
     height: 50,
-    backgroundColor: "#f5f5f5", 
+    backgroundColor: "#f5f5f5",
     borderRadius: 20,
     gap: 5,
     marginVertical: 10,
@@ -240,46 +219,39 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: "#e0e0e0",
   },
-  
   input: {
     flex: 1,
-    fontWeight: "500", // Reduced from 700 for better readability
+    fontWeight: "500",
     fontSize: 16,
   },
-
   forgotPasswordContainer: {
     marginTop: 5,
     alignItems: "flex-end",
   },
-
   forgotPassword: {
     color: "#0000cd",
     fontFamily: "semiBold",
     fontWeight: "600",
   },
-
   btn: {
     marginTop: 20,
     width: "100%",
-    padding: Platform.OS === 'ios'? 15:9, // Increased padding for better touch target
+    padding: Platform.OS === "ios" ? 15 : 9,
     backgroundColor: "#0000cd",
     borderRadius: 20,
     alignItems: "center",
     shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
+    shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
     elevation: 5,
   },
   btnText: {
     color: "white",
-    fontFamily: "Bold", 
+    fontFamily: "Bold",
     fontSize: 18,
   },
-  signupContent: { 
+  signupContent: {
     marginTop: 20,
     justifyContent: "center",
     flexDirection: "row",
